@@ -1,0 +1,303 @@
+/* M&P Car Registration Services — logo black, feather-flag blue, sky, cool paper; official and plain-spoken */
+
+:root{
+  --ink:#15171b;
+  --char:#23272e;
+  --blue:#1d6cc2;
+  --blue-dk:#15549a;
+  --sky:#6cbcf7;
+  --paper:#eef1f4;
+  --muted:#565e6b;
+  --rule:#d2dae4;
+  --line:#dce1e7;
+  --wrap:1160px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:400 17px/1.65 Overpass,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:900;line-height:1.08;margin:0;letter-spacing:-.015em;color:var(--ink)}
+h1,h2{font-style:italic}
+p{margin:0 0 1em}
+a{color:var(--blue-dk)}
+.wrap{width:min(100% - 2.5rem,var(--wrap));margin-inline:auto}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:1rem;top:1rem;z-index:99;background:#fff;padding:.6rem 1rem}
+[id]{scroll-margin-top:88px}
+.sec{display:flex;align-items:center;gap:.6rem;font:700 .74rem/1 "Overpass Mono",ui-monospace,monospace;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:.9rem}
+.sec::before{content:"";width:28px;height:4px;border-radius:4px;background:currentColor;transform:skewX(-30deg)}
+
+/* header */
+.bar{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 0 var(--ink);position:sticky;top:0;z-index:40}
+.bar-in{display:flex;align-items:center;gap:1.4rem;min-height:72px}
+.mark{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--ink);margin-right:auto;min-width:0}
+.mini{flex:none;display:grid;place-items:center;width:62px;height:34px;border-radius:6px;background:var(--ink);color:#fff;
+  font-style:italic;font-weight:900;font-size:1.05rem;letter-spacing:-.02em;box-shadow:inset 0 -4px 0 var(--blue)}
+.mark-t{display:flex;flex-direction:column;line-height:1.05;min-width:0}
+.mark-t b{font-weight:900;font-style:italic;font-size:1.2rem;letter-spacing:-.015em}
+.mark-t em{font:600 .62rem/1.2 "Overpass Mono",monospace;font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-top:.3rem}
+.nav{display:flex;gap:1.4rem}
+.nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.95rem}
+.nav a:hover{color:var(--blue)}
+.bar-tel{background:var(--blue);color:#fff;text-decoration:none;font-weight:800;padding:.65rem 1.1rem .55rem;border-radius:999px;white-space:nowrap}
+.bar-tel:hover{background:var(--blue-dk)}
+.bar-tel em{font-style:normal}
+.nav-toggle,.nav-btn{display:none}
+
+/* hero */
+.hero{position:relative;background:var(--ink);color:#c9ced6;overflow:hidden}
+.hero-art::before{content:"";position:absolute;left:50%;top:42%;width:135%;aspect-ratio:2.3/1;border-radius:50%;
+  border:14px solid var(--blue);border-left-color:transparent;border-right-color:transparent;transform:translate(-50%,-50%) rotate(-9deg);opacity:.6;pointer-events:none}
+.hero-in{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;
+  padding:clamp(3rem,7vw,5.5rem) 0}
+.kicker{font:600 .74rem/1.4 "Overpass Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--sky);margin-bottom:1.1rem}
+.hero h1{color:#fff;font-size:clamp(2.6rem,5.8vw,4.6rem);line-height:.98;letter-spacing:-.03em;margin-bottom:1.3rem}
+.lede{font-size:1.14rem;max-width:34rem;margin-bottom:1.8rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem 1rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:800;font-size:1.08rem;
+  line-height:1.1;padding:1rem 1.6rem .9rem;border-radius:999px;margin-bottom:5px}
+.btn.call{background:var(--blue);color:#fff;font-size:1.25rem;padding:1.1rem 1.9rem 1rem;box-shadow:0 5px 0 var(--blue-dk)}
+.btn.call:hover{background:var(--blue-dk)}
+.btn.dir{background:#fff;color:var(--ink);box-shadow:0 5px 0 #9aa3b0}
+.btn.dir:hover{background:#eef1f4}
+.btn.light{background:#fff;color:var(--blue-dk);font-size:1.2rem;box-shadow:0 5px 0 #0d3a6b}
+.facts{list-style:none;margin:2.2rem 0 0;padding:1.3rem 0 0;border-top:1px solid rgba(255,255,255,.16);display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.facts li,.facts a{font-size:.86rem;line-height:1.3;color:#a7afbb;text-decoration:none}
+.facts b{display:block;font:700 1.02rem/1.2 "Overpass Mono",monospace;color:#fff;margin-bottom:.25rem}
+.facts a:hover b{color:var(--sky)}
+
+/* hero plate */
+.hero-art{position:relative;display:flex;flex-direction:column;align-items:center}
+.plate-wrap{container-type:inline-size;width:min(100%,470px);transform:rotate(3deg)}
+.plate{position:relative;aspect-ratio:2/1;border-radius:4cqw;color:#1a2a5c;
+  background:radial-gradient(circle at 23% 12%,#7f8898 0 .9cqw,transparent 1.1cqw),radial-gradient(circle at 77% 12%,#7f8898 0 .9cqw,transparent 1.1cqw),
+    radial-gradient(circle at 23% 90%,#7f8898 0 .9cqw,transparent 1.1cqw),radial-gradient(circle at 77% 90%,#7f8898 0 .9cqw,transparent 1.1cqw),
+    linear-gradient(155deg,#fff 0%,#eef1f5 38%,#fff 55%,#e2e6ed 100%);
+  box-shadow:inset 0 0 0 1.4cqw #fff,inset 0 0 0 1.9cqw #c2c9d4,0 3cqw 6cqw rgba(0,0,0,.55)}
+.p-mo{position:absolute;top:7.5%;left:6%;background:#fff;border:.35cqw solid #1a2a5c;font:700 4.4cqw/1 "Overpass Mono",monospace;padding:1.2cqw 1.4cqw .8cqw}
+.p-st{position:absolute;top:5.5%;left:0;right:0;text-align:center;font-style:italic;font-weight:800;font-size:8.8cqw;line-height:1.1;color:#c8202f;letter-spacing:-.03em}
+.p-st::after{content:"";display:inline-block;width:.6em;height:.07em;margin-left:-.05em;border-radius:1em;background:currentColor;vertical-align:.1em}
+.p-yr{position:absolute;top:7%;right:6%;display:flex;align-items:center;gap:1cqw;background:#7fd0f5;color:#111;font:700 4.6cqw/1 "Overpass Mono",monospace;padding:1.2cqw 1.4cqw .8cqw}
+.p-yr small{font-size:2.2cqw;line-height:1;width:2cqw;word-break:break-all}
+.p-no{position:absolute;left:0;right:0;top:34%;text-align:center;font:600 16.5cqw/1 "Overpass Mono",monospace;letter-spacing:-.02em;
+  text-shadow:0 .5cqw 0 rgba(13,26,59,.22)}
+.p-ft{position:absolute;left:0;right:0;bottom:6.5%;text-align:center;font:700 2.8cqw/1 "Overpass Mono",monospace;letter-spacing:.22em;text-transform:uppercase;color:#c8202f}
+.partner{align-self:flex-end;width:min(310px,92%);margin:-.2rem 3% 0 0;background:#fff;color:var(--ink);padding:1.1rem 1.2rem 1rem;
+  border-top:6px solid var(--blue);transform:rotate(-2deg);box-shadow:0 18px 34px rgba(0,0,0,.45)}
+.pt-badge{display:inline-block;font:700 .72rem/1 "Overpass Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--blue);
+  padding:.45rem .6rem .35rem;border-radius:3px;margin-bottom:.7rem}
+.partner p:not(.pt-badge):not(.pt-src){font-size:.98rem;line-height:1.45;font-style:italic;margin-bottom:.6rem}
+.pt-src{margin:0;font-size:.8rem;color:var(--muted)}
+
+/* address + hours strip */
+.strip{background:var(--blue);color:#e3effb}
+.strip-in{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 2rem;padding:1rem 0}
+.strip p{margin:0;font-size:.98rem}
+.strip b{color:#fff;margin-right:.3rem}
+.strip a{margin-left:auto;color:#fff;font-weight:800;text-decoration:none;border:2px solid #fff;border-radius:999px;padding:.45rem 1rem .35rem}
+.strip a:hover{background:#fff;color:var(--blue-dk)}
+
+/* sections */
+.section{padding:clamp(3.5rem,7vw,5.5rem) 0}
+.head{max-width:48rem;margin-bottom:2rem}
+.head h2{font-size:clamp(2.1rem,4.6vw,3.2rem)}
+.head p:not(.sec){color:var(--muted);font-size:1.03rem;margin:.9rem 0 0}
+
+/* services: form cards */
+.pick{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem}
+.pick a{font:600 .76rem/1 "Overpass Mono",monospace;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:var(--ink);
+  background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:.62rem .95rem .52rem}
+.pick a:hover{background:var(--ink);color:#fff}
+.forms{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;align-items:start}
+.fc{background:#fff;border:1px solid #cdd4dd;border-left:6px solid var(--ink);padding:0 1.6rem 1.3rem;box-shadow:0 12px 26px -20px rgba(21,23,27,.55)}
+.fc-top{display:flex;justify-content:space-between;gap:1rem;margin:0 -1.6rem 1.1rem;padding:.6rem 1.6rem .5rem;background:var(--ink);
+  font:600 .72rem/1.2 "Overpass Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:#fff}
+.fc-top span:last-child{color:var(--sky)}
+.fc h3{font-size:1.5rem;margin-bottom:.45rem}
+.fc-sub{color:var(--muted);font-size:.98rem}
+.fc-lab{font:700 .7rem/1 "Overpass Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin:.2rem 0 .55rem}
+.tags{list-style:none;margin:0 0 1.1rem;padding:0;display:flex;flex-wrap:wrap;gap:.35rem}
+.tags li{font:600 .74rem/1.3 "Overpass Mono",monospace;background:#e6f0fa;color:var(--blue-dk);border:1px solid #c3d9ef;border-radius:4px;padding:.35rem .5rem .28rem}
+.check{list-style:none;margin:0;padding:0}
+.check li{position:relative;padding:.5rem 0 .45rem 2rem;border-bottom:1px solid var(--rule);font-size:.95rem;line-height:1.45}
+.check li::before{content:"";position:absolute;left:0;top:.55rem;width:1.05rem;height:1.05rem;border:2px solid var(--ink);border-radius:3px;background:#fff}
+.fc-note{font-size:.9rem;color:var(--muted);margin:.9rem 0 0}
+
+/* photo strip */
+.attach{background:var(--char);padding:clamp(2.2rem,4vw,3.2rem) 0;overflow:hidden}
+.attach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.attach figure{margin:0}
+.attach img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px}
+.attach figcaption{font-size:.88rem;line-height:1.35;color:#c9ced6;padding:.7rem 0 0}
+.attach figcaption b{display:inline-block;font:700 .68rem/1 "Overpass Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:#fff;
+  background:var(--blue);padding:.35rem .5rem .28rem;border-radius:3px;margin-right:.5rem}
+
+/* how it works: blue service signs */
+.signs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.signs li{position:relative;background:var(--blue);color:#e3effb;border-radius:14px;padding:2rem 1.3rem 1.4rem;margin:1rem 0 2.4rem;
+  box-shadow:inset 0 0 0 5px var(--blue),inset 0 0 0 7px #fff}
+.signs li::after{content:"";position:absolute;top:100%;left:24%;right:24%;height:2.4rem;
+  background:linear-gradient(90deg,#8e97a7 0 9px,transparent 9px calc(100% - 9px),#8e97a7 calc(100% - 9px))}
+.tab{position:absolute;top:-1.05rem;left:1.2rem;background:var(--blue);color:#fff;font:700 .72rem/1 "Overpass Mono",monospace;letter-spacing:.1em;
+  text-transform:uppercase;padding:.55rem .7rem .45rem;border-radius:6px 6px 0 0;box-shadow:inset 0 0 0 2px #fff}
+.signs h3{color:#fff;font-size:1.35rem;margin-bottom:.5rem}
+.signs p{margin:0;font-size:.95rem;line-height:1.5}
+.signs a{color:#fff;font-weight:700}
+
+/* new to California */
+.newca{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.newca-in{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.newca-img{position:sticky;top:110px}
+.newca-img img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:6px}
+.newca h2{font-size:clamp(2rem,4.2vw,3rem);margin-bottom:1rem}
+.newca-in>div>p:not(.sec):not(.tip){color:#3b424e}
+.route{list-style:none;counter-reset:r;margin:1.5rem 0;padding:0}
+.route li{counter-increment:r;position:relative;padding:0 0 1.1rem 3.2rem}
+.route li::before{content:counter(r);position:absolute;left:0;top:-.15rem;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--blue);color:#fff;
+  display:grid;place-items:center;font:700 .95rem/1 "Overpass Mono",monospace}
+.route li::after{content:"";position:absolute;left:calc(1.1rem - 1px);top:2.3rem;bottom:.2rem;width:2px;background:var(--rule)}
+.route li:last-child::after{display:none}
+.tip{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--blue);padding:.9rem 1.1rem;font-size:.95rem}
+.tip.warn{border-left-color:var(--ink)}
+
+/* cost */
+.cost-in{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.cost h2{font-size:clamp(2rem,4.2vw,3rem);margin-bottom:1rem}
+.cost-in>div>p:not(.sec){color:#3b424e;max-width:38rem}
+.cost .btn{margin-top:.4rem}
+.split{background:#fff;border:1px solid #cdd4dd;border-radius:10px;padding:1.4rem;box-shadow:0 14px 30px -22px rgba(21,23,27,.6)}
+.split-row{border-radius:8px;padding:1rem 1.2rem;background:var(--paper)}
+.split-row.mp{background:#e6f0fa}
+.split-k{font:700 .78rem/1 "Overpass Mono",monospace;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem}
+.split-row.mp .split-k{color:var(--blue-dk)}
+.split-v{margin:0;font-size:.98rem;color:#3b424e}
+.split-plus{margin:.3rem 0;text-align:center;font:900 1.8rem/1 Overpass,sans-serif;color:var(--blue)}
+
+/* bought or sold band */
+.sold{background:var(--blue);color:#e3effb;overflow:hidden}
+.sold-in{display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:clamp(2rem,5vw,4rem);padding:clamp(2.6rem,5vw,3.6rem) 0}
+.sold img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;box-shadow:0 18px 36px rgba(0,0,0,.3)}
+.sold h2{color:#fff;font-size:clamp(2rem,4.2vw,3rem);margin-bottom:.8rem}
+.sold p{font-size:1.06rem;max-width:36rem}
+
+/* reviews */
+.reviews{background:#fff;border-bottom:1px solid var(--line)}
+.rev-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem 2rem;max-width:none}
+.score{display:inline-flex;align-items:baseline;gap:.5rem;flex-wrap:wrap;text-decoration:none;color:var(--muted);font-size:.95rem;
+  border:1.5px solid var(--line);border-radius:999px;padding:.6rem 1.2rem .5rem}
+.score:hover{border-color:var(--blue)}
+.score b{font-weight:900;font-size:2rem;line-height:1;color:var(--ink);letter-spacing:-.02em}
+.score span{letter-spacing:.1em;color:transparent;background:linear-gradient(90deg,#e7a91e 94%,#cfd5dd 94%);-webkit-background-clip:text;background-clip:text}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.rev-grid blockquote{margin:0;background:var(--paper);border-radius:10px;padding:1.6rem 1.6rem 1.3rem;border-top:5px solid var(--blue)}
+.rev-grid p{font-size:1.2rem;font-weight:800;font-style:italic;line-height:1.35;letter-spacing:-.01em}
+.rev-grid cite{font:600 .74rem/1.4 "Overpass Mono",monospace;font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.rev-more{margin:1.4rem 0 0;font-size:.95rem}
+
+/* faq */
+.faq-in{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.faq-in h2{font-size:clamp(2rem,4.2vw,3rem);margin-bottom:1.6rem}
+details{background:#fff;border:1px solid #cdd4dd;border-radius:8px;margin-bottom:.6rem}
+summary{position:relative;cursor:pointer;list-style:none;padding:1rem 3rem .9rem 1.2rem;font-weight:800;font-size:1.1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:1.1rem;top:50%;transform:translateY(-50%);font:700 1.4rem/1 "Overpass Mono",monospace;color:var(--blue)}
+details[open] summary{border-bottom:1px solid var(--rule)}
+details[open] summary::after{content:"\2212"}
+details p{margin:1rem 0;padding:0 1.2rem;font-size:.98rem;color:#3b424e}
+details p:last-child{margin-bottom:1.2rem}
+.ask{position:sticky;top:110px;background:var(--ink);color:#c9ced6;border-radius:10px;padding:1.8rem 1.6rem}
+.ask h3{color:#fff;font-size:1.5rem;font-style:italic;margin-bottom:.6rem}
+.ask .btn{width:100%;margin:.4rem 0 1.2rem}
+.mini-hours{margin:0}
+.mini-hours div{display:flex;justify-content:space-between;gap:1rem;padding:.45rem 0;border-top:1px solid rgba(255,255,255,.14);font-size:.92rem}
+.mini-hours dt{color:#fff;font-weight:700}
+.mini-hours dd{margin:0;font-family:"Overpass Mono",monospace}
+
+/* visit */
+.visit-in{display:grid;grid-template-columns:1fr 1fr .85fr;gap:clamp(1.6rem,4vw,3rem);align-items:start}
+.hours-card{background:#fff;border:1px solid #cdd4dd;border-left:6px solid var(--blue);padding:1.7rem 1.7rem 1.2rem}
+.hours-card h2{font-size:clamp(1.8rem,3.4vw,2.4rem);margin-bottom:1.1rem}
+.hours{margin:0}
+.hours div{display:flex;justify-content:space-between;gap:1rem;padding:.62rem 0 .55rem;border-bottom:1px solid var(--rule)}
+.hours div:last-child{border-bottom:0}
+.hours dt{font-weight:700}
+.hours dd{margin:0;font-family:"Overpass Mono",monospace;font-size:.95rem;text-align:right}
+.hours .sat dd{color:var(--blue-dk);font-weight:700}
+.hours .closed dd{color:var(--muted)}
+.addr{font-weight:900;font-style:italic;font-size:clamp(1.5rem,2.8vw,1.95rem);line-height:1.15;margin-bottom:.9rem}
+.where>p:not(.addr):not(.sec){color:#3b424e}
+.where .cta{margin:1.4rem 0 1rem}
+.where .btn.dir{border:2px solid var(--ink);box-shadow:0 5px 0 var(--ink)}
+.links{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font-weight:700;font-size:.95rem}
+.store{margin:0}
+.store img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px}
+.store figcaption{font-size:.82rem;color:var(--muted);margin-top:.5rem}
+
+/* footer */
+.foot{background:var(--ink);color:#a7afbb;padding:2.4rem 0}
+.foot-in{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem 3rem}
+.foot-mark{font-weight:900;font-style:italic;font-size:1.4rem;color:#fff;margin-bottom:.3rem}
+.foot p{margin:0 0 .3rem;font-size:.92rem}
+.foot a{color:#fff}
+.fine{font-size:.8rem!important;color:#838c99}
+.actionbar{display:none}
+
+@media (max-width:1040px){
+  .nav-btn{display:block;width:32px;height:24px;position:relative;cursor:pointer;order:3;flex:none}
+  .nav-btn span,.nav-btn::before,.nav-btn::after{content:"";position:absolute;left:0;right:0;height:3px;background:var(--ink)}
+  .nav-btn span{top:10px}.nav-btn::before{top:2px}.nav-btn::after{top:18px}
+  .nav{position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:0 1.25rem;max-height:0;overflow:hidden;
+    transition:.25s;margin-top:3px}
+  .nav a{padding:.85rem 0;border-bottom:1px solid var(--rule)}
+  .nav-toggle:checked ~ .nav{max-height:400px;padding:.3rem 1.25rem .8rem;border-bottom:3px solid var(--ink)}
+  .bar-in{position:relative}
+  .bar-tel{order:2}
+  .visit-in{grid-template-columns:1fr 1fr}
+  .store img{aspect-ratio:16/9;object-position:50% 72%}
+  .store{grid-column:1/-1}
+}
+@media (max-width:980px){
+  .hero-in,.newca-in,.cost-in,.faq-in,.sold-in{grid-template-columns:1fr}
+  .signs,.attach-grid{grid-template-columns:1fr 1fr}
+  .rev-grid{grid-template-columns:1fr}
+  .newca-img,.ask{position:static}
+  .sold img{max-width:460px}
+}
+@media (max-width:760px){
+  body{padding-bottom:84px}
+  .bar-tel em{display:none}
+  .actionbar{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;
+    border-top:3px solid var(--ink);padding:.55rem .6rem calc(.55rem + env(safe-area-inset-bottom))}
+  .actionbar a{display:flex;align-items:center;justify-content:center;min-height:54px;border-radius:999px;text-decoration:none;font-weight:800;font-size:1.12rem;color:#fff}
+  .ab-call{background:var(--blue)}
+  .ab-dir{background:var(--ink)}
+  .forms,.visit-in{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .strip a{margin-left:0}
+  .fc{padding:0 1.2rem 1.2rem}
+  .fc-top{margin:0 -1.2rem 1rem;padding:.6rem 1.2rem .5rem}
+  .hours-card{padding:1.4rem 1.2rem 1rem}
+  .store img{aspect-ratio:4/3}
+}
+@media (max-width:520px){
+  .cta .btn{flex:1 1 100%}
+  .signs,.attach-grid{grid-template-columns:1fr}
+  .signs li{margin-bottom:2rem}
+  .partner{width:100%;margin-right:0}
+  .hero-art::before{border-width:10px}
+}
+
+/* phones: keep the header on a single row */
+@media (max-width:520px){
+  .bar-in{flex-wrap:nowrap!important;gap:.75rem!important}
+  .mark{min-width:0;flex:1 1 auto}
+  .mark em,.mark-sub{display:none}
+  .bar-cta,.bar-tel{font-size:.82rem!important;padding:.45rem .8rem!important;flex:none;line-height:1.2}
+  .bar-tel b{font-size:1.05rem}
+  .bar-tel em,.bar-call span{display:none}
+  .bar-call a{font-size:1.05rem}
+  .mini{width:52px;height:30px;font-size:.92rem}
+  .mark-t b{font-size:.98rem}
+}

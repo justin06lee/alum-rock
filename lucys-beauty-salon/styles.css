@@ -1,0 +1,181 @@
+/* Lucy's Beauty Salon — cobalt, lemon, cream; a bilingual menu board, bright and simple */
+
+:root{
+  --cobalt:#2340a0;
+  --cobalt-dk:#182c72;
+  --lemon:#f5d547;
+  --lemon-lt:#fcf3c9;
+  --cream:#fdfaf1;
+  --ink:#1a1f33;
+  --muted:#565c70;
+  --line:#e7e0c8;
+  --wrap:1160px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);
+  font:400 16.5px/1.65 Commissioner,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:"Yeseva One",Georgia,serif;font-weight:400;line-height:1.1;margin:0}
+p{margin:0 0 1em}
+a{color:var(--cobalt)}
+.wrap{width:min(100% - 2.5rem,var(--wrap));margin-inline:auto}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:1rem;top:1rem;z-index:99;background:#fff;padding:.6rem 1rem}
+[id]{scroll-margin-top:76px}
+.eyebrow{font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cobalt);margin-bottom:.8rem}
+.fine{font-size:.85rem}
+
+/* header */
+.bar{background:var(--cream);position:sticky;top:0;z-index:40;border-bottom:3px solid var(--lemon)}
+.bar-in{display:flex;align-items:center;gap:1.6rem;min-height:68px}
+.mark{display:flex;align-items:center;gap:.6rem;font-family:"Yeseva One",Georgia,serif;font-size:1.45rem;color:var(--cobalt-dk);
+  text-decoration:none;margin-right:auto;min-width:0;line-height:1.1}
+.mark-l{flex:none;width:38px;height:38px;border-radius:50%;background:var(--cobalt);color:var(--lemon);display:grid;place-items:center;font-size:1.3rem}
+.nav{display:flex;gap:1.6rem}
+.nav a{color:var(--ink);text-decoration:none;font-size:.95rem;font-weight:600}
+.nav a:hover{color:var(--cobalt)}
+.bar-cta{background:var(--cobalt);color:#fff;text-decoration:none;font-weight:700;font-size:.92rem;padding:.6rem 1.2rem;border-radius:999px}
+.bar-cta:hover{background:var(--cobalt-dk)}
+.nav-toggle,.nav-btn{display:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;font-weight:700;font-size:1.08rem;line-height:1.15;
+  padding:.8rem 1.5rem;border-radius:999px;border:2px solid transparent}
+.btn svg{flex:none}
+.btn small{display:block;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.9;margin-bottom:.1rem}
+.btn.lemon{background:var(--lemon);color:var(--ink)}
+.btn.lemon:hover{background:#fff}
+.btn.ghost{border-color:rgba(255,255,255,.6);color:#fff}
+.btn.ghost:hover{border-color:var(--lemon);color:var(--lemon)}
+
+/* hero — text left, menu board right */
+.hero{background:var(--cobalt);color:#fff;overflow:hidden}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(2rem,5vw,4.5rem);align-items:center;
+  padding:clamp(3rem,6vw,5rem) 0}
+.hero .eyebrow{color:var(--lemon)}
+.hero h1{font-size:clamp(2.8rem,6.2vw,5rem);margin-bottom:.9rem}
+.hero .es{font-family:"Yeseva One",Georgia,serif;font-size:clamp(1.4rem,2.8vw,2rem);line-height:1.2;color:var(--lemon);margin-bottom:.5rem}
+.hero .en{font-size:1.08rem;color:#dfe5f7;max-width:34rem;margin-bottom:1.7rem}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:1.3rem}
+.meta{display:flex;flex-wrap:wrap;gap:.5rem;margin:0}
+.meta a,.meta span{font-size:.88rem;border-radius:999px;padding:.3rem .9rem;border:1.5px solid rgba(255,255,255,.35);color:#fff;text-decoration:none}
+.meta b{color:var(--lemon)}
+.meta a:hover{border-color:var(--lemon)}
+.menu{background:var(--lemon);color:var(--ink);border-radius:18px;padding:clamp(1.5rem,3vw,2.2rem);transform:rotate(-1.5deg);
+  box-shadow:0 22px 50px rgba(10,20,60,.35)}
+.menu h2{font-size:clamp(1.6rem,2.6vw,2rem);padding-bottom:.8rem;border-bottom:2px solid var(--ink)}
+.menu h2 span{margin-right:.4rem}
+.menu ul{list-style:none;margin:0;padding:0}
+.menu li{padding:.75rem 0;border-bottom:1px dashed rgba(26,31,51,.35);font-size:.9rem;line-height:1.35}
+.menu li b{display:block;font-family:"Yeseva One",Georgia,serif;font-weight:400;font-size:1.2rem;color:var(--cobalt-dk)}
+.menu>p{margin:1rem 0 0;font-size:.85rem;font-weight:600;text-align:center}
+
+/* sections */
+.section{padding:clamp(3.4rem,7vw,5.5rem) 0}
+.section.blue{background:var(--cobalt-dk);color:#dfe5f7}
+.head{margin-bottom:2.4rem}
+.head h2{font-size:clamp(2.2rem,4.6vw,3.3rem);color:var(--cobalt-dk);display:inline-block;padding-bottom:.35rem;
+  background:linear-gradient(var(--lemon),var(--lemon)) 0 100%/100% 8px no-repeat}
+.head>p:last-child:not(.eyebrow){margin:1rem 0 0;font-weight:600}
+
+/* services */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.3rem}
+.cards article{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 1px 0 var(--line),0 12px 30px rgba(24,44,114,.07)}
+.cards img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.cards article>div{padding:1.2rem 1.4rem 1.4rem}
+.cards h3{font-size:1.55rem;color:var(--cobalt-dk);margin-bottom:.4rem}
+.cards h3 span{display:block;font-family:Commissioner,sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:.25rem}
+.cards p{margin:0;color:var(--muted)}
+.price-note{margin:2rem 0 0;font-weight:600}
+
+/* band */
+.band{background:var(--lemon)}
+.band-in{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem 2rem;padding:1.6rem 0}
+.band b{display:block;font-family:"Yeseva One",Georgia,serif;font-weight:400;font-size:1.3rem;color:var(--cobalt-dk);line-height:1.2}
+.band span{font-size:.9rem}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;align-items:start}
+.rev{margin:0;background:#fff;border-radius:18px;padding:1.4rem 1.5rem 1.2rem;border:1px solid var(--line)}
+.rev.es{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
+.stars{color:#a87f00;letter-spacing:.1em;margin:0 0 .5rem}
+.rev.es .stars{color:var(--lemon)}
+.rev blockquote{margin:0 0 1rem;font-size:1.02rem}
+.rev blockquote::before{content:"\201C";display:block;height:1.6rem;font-family:"Yeseva One",Georgia,serif;font-size:3.2rem;line-height:1;color:var(--lemon)}
+.rev blockquote p{margin:0}
+.rev figcaption{font-size:.84rem;color:var(--muted);border-top:1px solid var(--line);padding-top:.7rem}
+.rev.es figcaption{color:#c9d2f0;border-top-color:rgba(255,255,255,.25)}
+.rev cite{display:block;font-style:normal;font-weight:700;color:var(--ink)}
+.rev.es cite{color:#fff}
+
+/* hours + address */
+.visit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.blue .eyebrow{color:var(--lemon)}
+.hours{margin:0}
+.hours div{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.hours dt{font-weight:600;color:#fff}
+.hours dt span{font-weight:400;color:#aeb9e0;margin-left:.35rem;font-size:.88rem}
+.hours dd{margin:0;text-align:right}
+.hours .off dd{color:var(--lemon)}
+.addr{font-family:"Yeseva One",Georgia,serif;font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.15;color:#fff;margin-bottom:.8rem}
+.find .cta{margin-top:1.3rem}
+
+/* footer */
+.foot{background:var(--ink);color:#b8bdd0;padding:2.4rem 0}
+.foot-in{display:flex;justify-content:space-between;align-items:end;gap:1.2rem;flex-wrap:wrap}
+.foot-mark{font-family:"Yeseva One",Georgia,serif;font-size:1.5rem;color:#fff;margin-bottom:.3rem}
+.foot p{margin:0 0 .2rem}
+.foot a{color:var(--lemon)}
+
+/* phones: call + directions bar */
+.callbar{display:none}
+
+@media (max-width:980px){
+  .hero-in,.visit{grid-template-columns:1fr}
+  .menu{max-width:520px;transform:none}
+  .band-in{grid-template-columns:1fr 1fr}
+  .revs{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .nav-btn{display:block;flex:none;width:30px;height:22px;position:relative;cursor:pointer;order:3}
+  .nav-btn span,.nav-btn::before,.nav-btn::after{content:"";position:absolute;left:0;right:0;height:2.5px;border-radius:2px;background:var(--cobalt-dk)}
+  .nav-btn span{top:10px}.nav-btn::before{top:2px}.nav-btn::after{top:18px}
+  .nav{position:absolute;top:100%;left:0;right:0;background:var(--cream);flex-direction:column;gap:0;padding:0 1.25rem;
+    max-height:0;overflow:hidden;transition:.25s;box-shadow:0 12px 20px rgba(24,44,114,.08)}
+  .nav a{padding:.85rem 0;border-bottom:1px solid var(--line)}
+  .nav-toggle:checked ~ .nav{max-height:260px;padding:.3rem 1.25rem .8rem}
+  .bar-cta{order:2}
+}
+@media (max-width:760px){
+  body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+  .bar-cta{display:none}
+  .cards,.revs{grid-template-columns:1fr}
+  .callbar{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--cobalt-dk);
+    padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));box-shadow:0 -6px 20px rgba(0,0,0,.22)}
+  .callbar a{display:flex;align-items:center;justify-content:center;gap:.55rem;min-height:56px;border-radius:999px;text-decoration:none;
+    font-weight:700;font-size:1.05rem;line-height:1.1}
+  .callbar small{display:block;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.9}
+  .callbar a:first-child{background:var(--lemon);color:var(--ink)}
+  .callbar a:last-child{background:#fff;color:var(--cobalt-dk)}
+}
+@media (max-width:560px){
+  .band-in{grid-template-columns:1fr}
+  .cta .btn{flex:1 1 auto;justify-content:center}
+  .hours dt span{display:block;margin:0}
+}
+
+/* phones: keep the header on a single row */
+@media (max-width:520px){
+  .bar-in{flex-wrap:nowrap!important;gap:.75rem!important}
+  .mark{min-width:0;flex:1 1 auto}
+  .mark em,.mark-sub{display:none}
+  .bar-cta,.bar-tel{font-size:.82rem!important;padding:.45rem .8rem!important;flex:none;line-height:1.2}
+  .bar-tel b{font-size:1.05rem}
+  .bar-tel em,.bar-call span{display:none}
+  .bar-call a{font-size:1.05rem}
+  .bar-in{min-height:60px}
+  .mark{font-size:1.25rem}
+  .mark-l{width:34px;height:34px;font-size:1.15rem}
+}
