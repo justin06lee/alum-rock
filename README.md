@@ -4,8 +4,8 @@
 
 # alum-rock
 
-**Preview sites for the Alum Rock Ave walk, September 2026.**<br>
-*Published from the `alum-rock/` folder of the template repo. Don't edit here: change the source and run `make` there.*
+**Preview sites for local businesses, starting with the Alum Rock Ave walk, September 2026.**<br>
+*Published from the `alum-rock/` and `walkins/` folders of the template repo. Don't edit here: change the source and run `make` there.*
 
 </div>
 
