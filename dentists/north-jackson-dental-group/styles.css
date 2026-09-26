@@ -1,0 +1,208 @@
+/* Dental base — no brand: white, grey and one accent. Restyle it from the :root block alone. */
+
+:root{
+  /* the brand, such as it is: change these and the whole page follows */
+  --accent:#0b4566;        /* buttons, links, the rating stars: the navy of their old "Hi-Tech with Gentle Care" line */
+  --accent-ink:#ffffff;    /* text on the accent */
+  --accent-soft:#e4eef4;   /* tinted panels and chips: a tint of their old header's steel blue (#5988a4) */
+  --steel:#5988a4;         /* their old header blue, for small details */
+  --radius:8px;            /* 0 for square corners, 28px for soft ones */
+  --font-display:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --display-weight:700;
+
+  /* neutrals: usually left alone */
+  --bg:#ffffff;
+  --alt:#f4f7f9;
+  --ink:#122230;
+  --muted:#556270;
+  --line:#dde5eb;
+  --wrap:1140px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--font-body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+h1,h2,h3{font-family:var(--font-display);font-weight:var(--display-weight);line-height:1.12;margin:0;letter-spacing:-.015em}
+p{margin:0 0 1em}
+a{color:var(--accent)}
+figure{margin:0}
+.wrap{width:min(100% - 2.5rem,var(--wrap));margin-inline:auto}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:1rem;top:1rem;z-index:99;background:#fff;padding:.6rem 1rem}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+.muted{color:var(--muted)}
+.fine{font-size:.86rem;color:var(--muted)}
+
+/* header */
+.bar{background:rgba(255,255,255,.96);position:sticky;top:0;z-index:40;border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.bar-in{display:flex;align-items:center;gap:1.6rem;min-height:68px;position:relative}
+.mark{margin-right:auto;font-family:var(--font-display);font-weight:var(--display-weight);font-size:1.25rem;color:var(--ink);text-decoration:none;
+  letter-spacing:-.01em;line-height:1.15;min-width:0}
+.nav{display:flex;gap:1.5rem}
+.nav a{color:var(--ink);text-decoration:none;font-size:.94rem;font-weight:500}
+.nav a:hover{color:var(--accent)}
+.bar-cta{background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:.55rem 1.1rem;border-radius:var(--radius);white-space:nowrap}
+.nav-toggle,.nav-btn,.nav-m{display:none}
+
+/* buttons */
+.cta{display:flex;flex-wrap:wrap;gap:.7rem}
+.btn{display:inline-flex;flex-direction:column;justify-content:center;min-height:56px;padding:.7rem 1.4rem;border-radius:var(--radius);
+  text-decoration:none;font-weight:600;line-height:1.15}
+.btn small{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;opacity:.8;margin-bottom:.2rem}
+.btn-call{background:var(--accent);color:var(--accent-ink);font-size:1.35rem;font-weight:700}
+.btn-call:hover{filter:brightness(1.12)}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink);align-items:center}
+.btn-line:hover{background:var(--alt)}
+
+/* rating chip */
+.rating{display:inline-flex;flex-wrap:wrap;align-items:center;gap:.25rem .55rem;border:1px solid var(--line);border-radius:999px;
+  padding:.35rem .95rem;text-decoration:none;color:var(--ink);font-size:.9rem;background:var(--bg)}
+.rating b{font-size:1.05rem}
+.stars{color:var(--accent);letter-spacing:.06em}
+.rating:hover{border-color:var(--ink)}
+
+/* hero: three layouts, picked by the class on <body> */
+.hero{padding:clamp(2.5rem,6vw,4.5rem) 0}
+.hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.hero-txt{min-width:0}
+.hero h1{font-size:clamp(2.3rem,5.4vw,4rem);margin-bottom:.8rem;overflow-wrap:break-word}
+.lede{font-size:1.08rem;color:var(--muted);max-width:34rem}
+.hero .rating{margin:.2rem 0 1.4rem}
+.today{font-size:.92rem;color:var(--muted);margin:1rem 0 0}
+.hero-pic img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)}
+
+.hero-center .hero-in{grid-template-columns:1fr;text-align:center;justify-items:center}
+.hero-center .hero-pic{display:none}
+.hero-center .lede{margin-inline:auto}
+.hero-center .cta{justify-content:center}
+
+.hero-cover .hero{position:relative;padding:clamp(4rem,10vw,7.5rem) 0;color:#fff;isolation:isolate}
+.hero-cover .hero-in{grid-template-columns:minmax(0,40rem)}
+.hero-cover .hero-pic{position:absolute;inset:0;z-index:-1}
+.hero-cover .hero-pic img{height:100%;aspect-ratio:auto;border-radius:0;filter:brightness(.42)}
+.hero-cover .hero .lede,.hero-cover .hero .today,.hero-cover .hero .eyebrow{color:rgba(255,255,255,.85)}
+.hero-cover .hero .today a{color:#fff}
+.hero-cover .hero .rating{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.hero-cover .hero .stars{color:#fff}
+.hero-cover .hero .btn-call{background:var(--accent-ink);color:var(--accent)}
+.hero-cover .hero .btn-line{border-color:#fff;color:#fff}
+.hero-cover .hero .btn-line:hover{background:rgba(255,255,255,.1)}
+
+/* at a glance */
+.facts{border-block:1px solid var(--line);background:var(--alt)}
+.facts-in{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;padding:1.3rem 0}
+.facts p{margin:0;font-size:.94rem;color:var(--muted);line-height:1.4}
+.facts b{display:block;color:var(--ink);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.2rem}
+
+/* sections */
+.section{padding:clamp(3.5rem,7vw,5.5rem) 0}
+.section.alt{background:var(--alt)}
+.head{margin-bottom:2.2rem}
+.head h2,.about h2,.pay h2,.visit h2{font-size:clamp(1.9rem,3.8vw,2.7rem)}
+.head-row{display:flex;justify-content:space-between;align-items:end;gap:1.5rem}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.svc article{border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem 1.4rem 1.1rem;background:var(--bg)}
+.svc h3{font-size:1.15rem;margin-bottom:.4rem}
+.svc p{margin:0;color:var(--muted);font-size:.95rem;line-height:1.55}
+
+/* dentists */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.about h2{margin-bottom:.9rem}
+.about-txt>p{color:var(--muted)}
+.team{display:grid;gap:.8rem;margin-top:1.6rem}
+.team article{display:flex;align-items:center;gap:1rem;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:.9rem 1.1rem}
+.team h3{font-size:1.1rem}
+.team p{margin:0;color:var(--muted);font-size:.92rem}
+.mono{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--accent-soft);color:var(--ink);
+  font-family:var(--font-display);font-weight:var(--display-weight)}
+.about-pic img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--radius)}
+
+/* insurance */
+.pay{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.pay h2{margin-bottom:.8rem}
+.chips{display:flex;flex-wrap:wrap;gap:.55rem;list-style:none;margin:0;padding:0}
+.chips li{background:var(--accent-soft);border-radius:999px;padding:.45rem 1rem;font-weight:500;font-size:.95rem}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.reviews blockquote{margin:0;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem 1.4rem 1.1rem;display:flex;flex-direction:column}
+.reviews p{flex:1;font-size:1rem}
+.reviews cite{font-style:normal;font-size:.86rem;font-weight:600;color:var(--muted)}
+
+/* hours & location */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.visit h2{margin-bottom:1rem}
+.hours{margin:0}
+.hours div{display:flex;justify-content:space-between;gap:1rem;padding:.65rem 0;border-bottom:1px solid var(--line)}
+.hours dt{font-weight:600}
+.hours dd{margin:0;font-variant-numeric:tabular-nums}
+.hours .off dd{color:var(--muted)}
+.where{border:1px solid var(--line);border-radius:var(--radius);padding:1.7rem 1.6rem 1.2rem}
+.addr{font-family:var(--font-display);font-weight:var(--display-weight);font-size:1.45rem;line-height:1.25;margin-bottom:1.2rem}
+.notes{margin:1.3rem 0 0;padding-left:1.1rem;color:var(--muted);font-size:.95rem}
+
+/* closing band */
+.band{background:var(--accent);color:var(--accent-ink);padding:clamp(2.5rem,5vw,3.5rem) 0}
+.band-in{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.band h2{font-size:clamp(1.6rem,3.4vw,2.3rem);color:var(--accent-ink)}
+.band .btn-call{background:var(--accent-ink);color:var(--accent)}
+
+/* footer */
+.foot{padding:2.2rem 0;border-top:1px solid var(--line)}
+.foot-in{display:flex;justify-content:space-between;align-items:end;gap:1.5rem;flex-wrap:wrap}
+.foot p{margin:0 0 .3rem;font-size:.92rem}
+.foot-mark{font-family:var(--font-display);font-weight:var(--display-weight);font-size:1.15rem}
+.foot .fine{max-width:28rem}
+.callbar{display:none}
+
+@media (max-width:980px){
+  .nav{display:none}
+  .bar-cta span{display:none}
+  .nav-btn{display:block;width:28px;height:22px;position:relative;cursor:pointer;flex:none;order:3}
+  .nav-btn span,.nav-btn::before,.nav-btn::after{content:"";position:absolute;left:0;right:0;height:2px;background:var(--ink)}
+  .nav-btn span{top:10px}.nav-btn::before{top:2px}.nav-btn::after{top:18px}
+  .nav-m{display:flex;position:absolute;top:100%;left:-1.25rem;right:-1.25rem;background:var(--bg);flex-direction:column;
+    padding:0 1.25rem;max-height:0;overflow:hidden;transition:.25s;border-bottom:1px solid var(--line)}
+  .nav-m a{color:var(--ink);text-decoration:none;padding:.8rem 0;border-top:1px solid var(--line);font-weight:500}
+  .nav-toggle:checked ~ .nav-m{max-height:360px;padding:.2rem 1.25rem .6rem}
+  .hero-in,.about,.pay,.visit{grid-template-columns:1fr}
+  .svc,.reviews{grid-template-columns:1fr 1fr}
+  .facts-in{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .svc,.reviews{grid-template-columns:1fr}
+  .head-row{flex-direction:column;align-items:flex-start}
+  .callbar{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--bg);
+    border-top:1px solid var(--line);padding:.55rem .75rem calc(.55rem + env(safe-area-inset-bottom))}
+  .callbar a{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:var(--radius);text-decoration:none;font-weight:700;font-size:1.05rem}
+  .callbar a:first-child{background:var(--accent);color:var(--accent-ink)}
+  .callbar a:last-child{border:1.5px solid var(--ink);color:var(--ink)}
+  body{padding-bottom:78px}
+}
+@media (max-width:560px){
+  .cta .btn{flex:1 1 100%;align-items:center;text-align:center}
+  .facts-in{grid-template-columns:1fr;gap:.8rem}
+  .band-in{flex-direction:column;align-items:stretch;text-align:center}
+}
+
+/* phones: keep the header on a single row */
+@media (max-width:520px){
+  .bar-in{flex-wrap:nowrap!important;gap:.75rem!important}
+  .mark{min-width:0;flex:1 1 auto;font-size:1.1rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .bar-cta{font-size:.9rem!important;padding:.45rem .9rem!important;flex:none;line-height:1.2}
+}
+
+/* North Jackson Dental Group: the navy and steel blue of their old site, centered hero */
+.hero-center .hero{background:linear-gradient(180deg,var(--accent-soft),var(--bg) 88%);border-bottom:1px solid var(--line)}
+.hero h1{letter-spacing:-.03em}
+.tagline{font-family:var(--font-display);font-weight:500;font-size:clamp(1.2rem,2.6vw,1.55rem);color:var(--accent);letter-spacing:.01em;margin:-.2rem 0 1rem}
+.hero-center .hero .rating{margin-top:.6rem}
+.head .intro{max-width:40rem;margin:.9rem 0 0}
+.svc article{border-top:3px solid var(--steel)}
+.team article{align-items:flex-start}
+.face{flex:none;width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:50% 22%;background:var(--accent-soft)}
+.team h3{margin-bottom:.15rem}
+.reviews blockquote{border-left:3px solid var(--steel)}

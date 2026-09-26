@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<!--
+  42-dental-base: a plain dental-office page with no brand of its own.
+
+  To make it someone's:
+  1. Theme: edit the :root block at the top of styles.css (one accent colour, radius, fonts).
+     For a different hero, set the <body> class to hero-split (photo beside the text),
+     hero-center (no photo) or hero-cover (photo behind the text).
+  2. Words: replace every placeholder. They're easy to find: "Your Practice Name",
+     "(408) 555-0100", "1234 Example Ave", "Dr. Full Name", "Reviewer N.".
+  3. Delete anything that isn't true for this office: a service they don't offer, a language
+     nobody speaks, a plan they don't take, a whole section. Every block stands on its own.
+  4. Reviews are copied word for word from Google or Yelp with the reviewer's name as shown.
+     Never write one.
+-->
+<title>Your Practice Name — dentist in San Jose, CA</title>
+<meta name="description" content="Your Practice Name: general and family dentistry at 1234 Example Ave, San Jose, CA. Call (408) 555-0100.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="hero-split">
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="#top">Your Practice Name</a>
+    <input type="checkbox" id="nav" class="nav-toggle">
+    <label for="nav" class="nav-btn" aria-hidden="true"><span></span></label>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#team">Dentists</a>
+      <a href="#insurance">Insurance</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Hours</a>
+    </nav>
+    <a class="bar-cta" href="tel:+14085550100">Call<span> (408) 555-0100</span></a>
+    <nav class="nav-m">
+      <a href="#services">Services</a><a href="#team">Dentists</a><a href="#insurance">Insurance</a>
+      <a href="#reviews">Reviews</a><a href="#visit">Hours &amp; directions</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="wrap hero-in">
+    <div class="hero-txt">
+      <p class="eyebrow">Dentist &middot; San Jose, CA</p>
+      <h1>Your Practice Name</h1>
+      <p class="lede">General and family dentistry at 1234 Example Ave. Checkups, fillings, crowns
+        and emergency visits for adults and kids.</p>
+      <a class="rating" href="https://www.google.com/maps/search/?api=1&amp;query=Your%20Practice%20Name%2C%201234%20Example%20Ave%2C%20San%20Jose%2C%20CA" target="_blank" rel="noopener">
+        <b>4.9</b><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>120 Google reviews</span>
+      </a>
+      <div class="cta">
+        <a class="btn btn-call" href="tel:+14085550100"><small>Call</small>(408) 555-0100</a>
+        <a class="btn btn-line" href="https://www.google.com/maps/dir/?api=1&amp;destination=1234%20Example%20Ave%2C%20San%20Jose%2C%20CA%2095116" target="_blank" rel="noopener">Directions</a>
+      </div>
+      <p class="today">Open today 9 AM &ndash; 6 PM &middot; <a href="#visit">All hours</a></p>
+    </div>
+    <figure class="hero-pic">
+      <img src="images/chair.jpg" alt="Dental instruments on the arm of a treatment chair, with a tray of tools beside them">
+    </figure>
+  </div>
+</section>
+
+<section class="facts" aria-label="At a glance">
+  <div class="wrap facts-in">
+    <p><b>New patients</b>Welcome, adults and kids</p>
+    <p><b>Insurance</b>Most PPO plans</p>
+    <p><b>Languages</b>English &middot; Espa&ntilde;ol</p>
+    <p><b>Emergencies</b>Same-day when we can</p>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Services</p>
+      <h2>What we do</h2>
+    </div>
+    <div class="svc">
+      <article><h3>Checkups &amp; cleanings</h3><p>An exam, X-rays when they're due, and a professional cleaning.</p></article>
+      <article><h3>Fillings</h3><p>Tooth-colored fillings for cavities and small chips.</p></article>
+      <article><h3>Crowns &amp; bridges</h3><p>To protect a cracked or weak tooth, or fill a gap.</p></article>
+      <article><h3>Root canals</h3><p>To save a tooth when the nerve inside is infected.</p></article>
+      <article><h3>Extractions</h3><p>Including wisdom teeth, when a tooth can't be saved.</p></article>
+      <article><h3>Dentures &amp; partials</h3><p>Full or partial, plus relines and repairs.</p></article>
+      <article><h3>Implants</h3><p>A permanent replacement for a missing tooth.</p></article>
+      <article><h3>Children's dentistry</h3><p>Gentle first visits, sealants and fluoride.</p></article>
+      <article><h3>Emergency visits</h3><p>Toothache, broken tooth or a lost filling. Call first.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="team">
+  <div class="wrap about">
+    <div class="about-txt">
+      <p class="eyebrow">Dentists</p>
+      <h2>Who you'll see</h2>
+      <p>A short paragraph about the office in its own words: how long it's been here, who it
+        serves, what it's known for. Use only what the office says itself.</p>
+      <div class="team">
+        <article>
+          <span class="mono" aria-hidden="true">FN</span>
+          <div><h3>Dr. Full Name, DDS</h3><p>General dentist</p></div>
+        </article>
+        <article>
+          <span class="mono" aria-hidden="true">FN</span>
+          <div><h3>Dr. Full Name, DMD</h3><p>General dentist</p></div>
+        </article>
+      </div>
+    </div>
+    <figure class="about-pic">
+      <img src="images/model.jpg" alt="A dentist's gloved hands pointing a dental tool at a clear model of teeth with implants">
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="insurance">
+  <div class="wrap pay">
+    <div>
+      <p class="eyebrow">Insurance &amp; payment</p>
+      <h2>Plans we take</h2>
+      <p class="muted">Call with your plan's name and we'll check your benefits before your visit.</p>
+    </div>
+    <ul class="chips">
+      <li>Delta Dental PPO</li><li>MetLife</li><li>Cigna</li><li>Aetna</li>
+      <li>Guardian</li><li>United Concordia</li><li>Cash &amp; all major cards</li><li>Payment plans</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section alt" id="reviews">
+  <div class="wrap">
+    <div class="head head-row">
+      <div>
+        <p class="eyebrow">Reviews</p>
+        <h2>What patients say</h2>
+      </div>
+      <a class="rating" href="https://www.google.com/maps/search/?api=1&amp;query=Your%20Practice%20Name%2C%201234%20Example%20Ave%2C%20San%20Jose%2C%20CA" target="_blank" rel="noopener">
+        <b>4.9</b><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>120 Google reviews</span>
+      </a>
+    </div>
+    <div class="reviews">
+      <blockquote>
+        <p>&ldquo;A patient review goes here, copied word for word from Google or Yelp. Trim it
+          with an ellipsis if it's long, but never change the words.&rdquo;</p>
+        <cite>Reviewer N. &middot; Google review</cite>
+      </blockquote>
+      <blockquote>
+        <p>&ldquo;A second review. Pick ones that mention something specific: a gentle cleaning,
+          a same-day visit, a dentist by name.&rdquo;</p>
+        <cite>Reviewer N. &middot; Yelp review</cite>
+      </blockquote>
+      <blockquote>
+        <p>&ldquo;A third review. Three to six is plenty.&rdquo;</p>
+        <cite>Reviewer N. &middot; Google review</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="visit">
+  <div class="wrap visit">
+    <div>
+      <p class="eyebrow">Hours</p>
+      <h2>When we're open</h2>
+      <dl class="hours">
+        <div><dt>Monday</dt><dd>9 AM &ndash; 6 PM</dd></div>
+        <div><dt>Tuesday</dt><dd>9 AM &ndash; 6 PM</dd></div>
+        <div><dt>Wednesday</dt><dd>9 AM &ndash; 6 PM</dd></div>
+        <div><dt>Thursday</dt><dd>9 AM &ndash; 6 PM</dd></div>
+        <div><dt>Friday</dt><dd>9 AM &ndash; 5 PM</dd></div>
+        <div><dt>Saturday</dt><dd>9 AM &ndash; 2 PM</dd></div>
+        <div class="off"><dt>Sunday</dt><dd>Closed</dd></div>
+      </dl>
+    </div>
+    <div class="where">
+      <p class="eyebrow">Location</p>
+      <p class="addr">1234 Example Ave, Suite 100<br>San Jose, CA 95116</p>
+      <div class="cta">
+        <a class="btn btn-call" href="tel:+14085550100"><small>Call</small>(408) 555-0100</a>
+        <a class="btn btn-line" href="https://www.google.com/maps/dir/?api=1&amp;destination=1234%20Example%20Ave%2C%20San%20Jose%2C%20CA%2095116" target="_blank" rel="noopener">Directions</a>
+      </div>
+      <ul class="notes">
+        <li>Parking lot in front of the building.</li>
+        <li>Wheelchair-accessible entrance.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap band-in">
+    <h2>Need to see a dentist?</h2>
+    <a class="btn btn-call" href="tel:+14085550100"><small>Call</small>(408) 555-0100</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <p class="foot-mark">Your Practice Name</p>
+      <p>1234 Example Ave, Suite 100, San Jose, CA 95116 &middot; <a href="tel:+14085550100">(408) 555-0100</a></p>
+    </div>
+    <p class="fine">Template demonstration site &mdash; a blank dental page with placeholder details.</p>
+  </div>
+</footer>
+
+<nav class="callbar" aria-label="Call or get directions">
+  <a href="tel:+14085550100">Call</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1234%20Example%20Ave%2C%20San%20Jose%2C%20CA%2095116" target="_blank" rel="noopener">Directions</a>
+</nav>
+
+</body>
+</html>
